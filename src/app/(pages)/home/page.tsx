@@ -72,7 +72,7 @@ const YouTubePlaylists = () => {
         fetchPlaylists();
     };
 
-    const openPlaylist = (playlistId: string, playlistTitle: string) => {
+    const openPlaylist = (playlistId: string) => {
       router.push(`/playlist/${playlistId}`);
     };
 
@@ -123,7 +123,6 @@ const YouTubePlaylists = () => {
                                     onClick={() =>
                                         openPlaylist(
                                             playlist.id,
-                                            playlist.snippet.title
                                         )
                                     }
                                     className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"

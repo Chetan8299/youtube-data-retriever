@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
       const response2 = await axios.get(`https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&channelId=${id}&maxResults=50&key=${YOUTUBE_API_KEY}`)
 
      if (!response) {
-       throw new Error(response.data.error?.message || 'Failed to fetch playlists');
+       throw new Error('Failed to fetch playlists');
      }
  
      return NextResponse.json({ data: response2.data.items }, { status: 200 });

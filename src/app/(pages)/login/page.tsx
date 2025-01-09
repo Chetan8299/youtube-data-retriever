@@ -7,7 +7,7 @@ const Login = () => {
     const { data: session } = useSession();
     const handleGoogleSignIn = async () => {
         try {
-            await signIn("google");
+            await signIn("google",{ callbackUrl: "/home" });
             if (session) {
                 router.push("/home");
             }
@@ -18,7 +18,7 @@ const Login = () => {
    
     const handleSignOut = async () => {
       try {
-          await signOut({ callbackUrl: "/" });
+          await signOut({ callbackUrl: "/home" });
       } catch (error) {
           console.error("Error during sign-out:", error);
       }
